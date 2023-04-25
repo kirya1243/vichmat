@@ -81,12 +81,22 @@ if way == "+":
         b[i] = EnterZ()
     print("Ввод с клавиатуры окончен, все данные введены корректно")
 else:
-    # f = open('input.txt', 'r')
-    # l = []
-    # l = [line.split() for line in f]
-    # print
-    # l
-    e = 0
+    fname = input("Введите имя файла :")
+    f = open(fname, 'r')
+    l = []
+    l = [line.split()[0] for line in f]
+    print(l)
+    E = float(l[0].replace(",", "."))
+    n = int(l[1])
+    b = [0] * n
+    for i in range(n):
+        a.append([])
+        for j in range(n):
+            a[i].append(l[2+j])
+    for i in range(n):
+        b[i] = l[len(l)-n+i]
+    print(a)
+    print(b)
     print("Ввод из файл окончен, все данные введены корректно")
 try:
     A, B = diagonal_dominant(a, b)
